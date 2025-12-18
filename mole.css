@@ -1,0 +1,83 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: url("mario-bg.jpg");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+#board {
+    width: 540px;
+    height: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url("soil.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#board div {
+    width: 180px;
+    height: 180px;
+    background-image: url("pipe.png");
+    background-size: cover;
+}
+
+#board div img {
+    width: 100px;
+    height: 100px;
+    user-select: none;
+    transition: transform 0.1s ease-in-out;
+}
+@media (max-width: 600px) {
+    #board {
+        width: 300px;
+        height: 300px;
+    }
+
+    #board div {
+        width: 100px;
+        height: 100px;
+    }
+}
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+#gameOverScreen {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#gameOverScreen.hidden {
+    display: none;
+}
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-6px); }
+    50%  { transform: translateX(6px); }
+    75%  { transform: translateX(-6px); }
+    100% { transform: translateX(0); }
+}
+#board img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+}

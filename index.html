@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Mole</title>
+    <link rel="stylesheet" href="mole.css">
+    <script src="mole.js" defer></script>
+</head>
+<body>
+
+    <h1>Whack a Mole</h1>
+    <h2>Score: <span id="score">0</span></h2>
+    <h3>Time Left: <span id="timer">30</span>s</h3>
+
+    <div id="board"></div>
+
+    <br>
+    <button onclick="restartGame()">Restart</button>
+    <button onclick="toggleSound()">🔊</button>
+
+    <div id="gameOverScreen" class="hidden">
+        <h1>Game Over</h1>
+        <p>Your Score: <span id="finalScore"></span></p>
+        <p>High Score: <span id="highScore"></span></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+
+</body>
+</html>
